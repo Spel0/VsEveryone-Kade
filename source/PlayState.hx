@@ -3432,7 +3432,7 @@ class PlayState extends MusicBeatState
 						changeDad('pico');
 						dad.y += 350;
 						changeSpeed(1.6);
-					case 476:
+					case 480:
 						changeSpeed(2);
 					case 544:
 						changeSpeed(2.3);
@@ -3472,7 +3472,7 @@ class PlayState extends MusicBeatState
 					case 1120:
 						changeDad('spirit');
 						changeSpeed(1.5);
-					case 1181:
+					case 1184:
 						changeSpeed(2);
 					case 1216:
 						changeDad('whitty');
