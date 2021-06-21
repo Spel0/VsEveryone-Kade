@@ -3439,6 +3439,7 @@ class PlayState extends MusicBeatState
 					case 96:
 						changeDad('dad');
 						changeSpeed(1.3);
+						reloadIcons();
 					case 160:
 						changeSpeed(1.8);
 					case 221:
@@ -3447,12 +3448,14 @@ class PlayState extends MusicBeatState
 						changeDad('spooky');
 						dad.y += 200;
 						changeSpeed(2.4);
+						reloadIcons();
 					case 351:
 						changeSpeed(2.2);
 					case 418:
 						changeDad('pico');
 						dad.y += 350;
 						changeSpeed(1.6);
+						reloadIcons();
 					case 480:
 						changeSpeed(2);
 					case 544:
@@ -3460,6 +3463,7 @@ class PlayState extends MusicBeatState
 					case 608:
 						changeDad('mom');
 						changeSpeed(1.8);
+						reloadIcons();
 					case 672:
 						changeSpeed(2);
 					case 736:
@@ -3471,12 +3475,14 @@ class PlayState extends MusicBeatState
 						changeBf('bf-christmas');
 						boyfriend.y += 400;
 						boyfriend.x += 700;
+						reloadIcons();
 					case 862:
 						changeSpeed(1.9);
 					case 928:
 						changeDad('monster-christmas');
 						dad.y += 100;
 						changeSpeed(1.3);
+						reloadIcons();
 					case 988:
 						changeDad('senpai');
 						dad.y += 250;
@@ -3485,6 +3491,7 @@ class PlayState extends MusicBeatState
 						boyfriend.y += 530;
 						boyfriend.x += 850;
 						changeSpeed(1.3);
+						reloadIcons();
 					case 1060:
 						changeDad('senpai-angry');
 						dad.y += 250;
@@ -3493,6 +3500,7 @@ class PlayState extends MusicBeatState
 					case 1120:
 						changeDad('spirit');
 						changeSpeed(1.5);
+						reloadIcons();
 					case 1184:
 						changeSpeed(2);
 					case 1216:
@@ -3500,11 +3508,13 @@ class PlayState extends MusicBeatState
 						changeBf('bf');
 						boyfriend.y += 400;
 						boyfriend.x += 700;
+						reloadIcons();
 					case 1248:
 						changeSpeed(2.5);
 					case 1312:
 						changeDad('whitty-crazy');
 						changeSpeed(2.6);
+						reloadIcons();
 				};
 		}
 		if (curStep >= 1440 && curSong == 'Mashup')
@@ -3534,12 +3544,27 @@ class PlayState extends MusicBeatState
 		remove(dad);
 		dad = new Character(100,100,name);
 		add(dad);
+		SONG.player2 = name;
 	};
 
 	function changeBf(name:String) {
 		remove(boyfriend);
 		boyfriend = new Boyfriend(100,100,name);
 		add(boyfriend);
+		SONG.player1 = name;
+	}
+
+	function reloadIcons() {
+		remove(iconP1);
+		iconP1 = new HealthIcon(SONG.player1, true);
+		iconP1.y = healthBar.y - (iconP1.height / 2);
+		add(iconP1);
+		remove(iconP2);
+		iconP2 = new HealthIcon(SONG.player2, false);
+		iconP2.y = healthBar.y - (iconP2.height / 2);
+		add(iconP2);
+		iconP1.cameras = [camHUD];
+		iconP2.cameras = [camHUD];
 	}
 
 	override function beatHit()
