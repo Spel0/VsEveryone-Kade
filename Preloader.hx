@@ -33,7 +33,7 @@ class Preloader extends FlxBasePreloader
         logo.x = ((this._width) / 2) - ((logo.width) / 2);
         logo.y = (this._height / 2) - ((logo.height) / 2);
         addChild(logo); //Adds the graphic to the NMEPreloader's buffer.
-         
+
         super.create();
     }
      

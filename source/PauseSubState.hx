@@ -180,6 +180,9 @@ class PauseSubState extends MusicBeatSubstate
 				case "Resume":
 					close();
 				case "Restart Song":
+					if (PlayState.customSpeed == false) {
+						FlxG.save.data.scrollSpeed = 1;
+					};
 					FlxG.resetState();
 				case "Exit to menu":
 					if(PlayState.loadRep)
