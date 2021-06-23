@@ -53,27 +53,6 @@ class LoadingState extends MusicBeatState
 		add(gfDance);
 		add(logo);
 
-		new Boyfriend(100,100,'bf');
-		new Character(100,100,'dad');
-		new Character(100,100,'gf');
-		new Character(100,100,'gfmic');
-		new Character(100,100,'spooky');
-		new Character(100,100,'pico');
-		new Character(100,100,'mom');
-		new Character(100,100,'mom-car');
-		new Boyfriend(100,100,'bf-car');
-		new Character(100,100,'parents-christmas');
-		new Character(100,100,'monster-christmas');
-		new Boyfriend(100,100,'bf-christmas');
-		new Character(100,100,'gf-speakers');
-		new Character(100,100,'monster');
-		new Boyfriend(100,100,'bf-pixel');
-		new Character(100,100,'senpai');
-		new Character(100,100,'senpai-angry');
-		new Character(100,100,'spirit');
-		new Character(100,100,'whitty');
-		new Character(100,100,'whitty-crazy');
-		
 		initSongsManifest().onComplete
 		(
 			function (lib)
